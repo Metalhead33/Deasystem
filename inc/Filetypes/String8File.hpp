@@ -7,7 +7,7 @@
 
 #ifndef STRING8FILE_HPP
 #define STRING8FILE_HPP
-#include "File.hpp"
+#include "../File.hpp"
 namespace Dea {
 class String8File : public File {
 public:

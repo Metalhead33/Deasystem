@@ -7,7 +7,7 @@
 
 #ifndef STRING16FILE_HPP
 #define STRING16FILE_HPP
-#include "File.hpp"
+#include "../File.hpp"
 #include <string>
 namespace Dea {
 class String16File : public File {

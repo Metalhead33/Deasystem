@@ -7,7 +7,7 @@
 
 #ifndef STRING32FILE_HPP
 #define STRING32FILE_HPP
-#include "File.hpp"
+#include "../File.hpp"
 #include <string>
 namespace Dea {
 class String32File : public File {

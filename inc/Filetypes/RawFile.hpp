@@ -7,7 +7,7 @@
 
 #ifndef RAWFILE_HPP
 #define RAWFILE_HPP
-#include "File.hpp"
+#include "../File.hpp"
 #include <cstdlib>
 namespace Dea {
 class RawFile : public File {

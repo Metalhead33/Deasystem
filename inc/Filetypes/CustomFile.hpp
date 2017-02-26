@@ -7,8 +7,8 @@
 
 #ifndef CUSTOMFILE_HPP
 #define CUSTOMFILE_HPP
-#include "File.hpp"
-#include "Global.hpp"
+#include "../File.hpp"
+#include "../Global.hpp"
 #include <cstdint>
 namespace Dea {
 	
