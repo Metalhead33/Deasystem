@@ -11,12 +11,11 @@ project(Deasystem)
   endif ()
 
 # Find source files
-file(GLOB SOURCES src/*.cpp)
-file(GLOB SOURCES src/Filetypes/*.cpp)
+file(GLOB SOURCES "src/*.cpp" "src/Filetypes/*.cpp")
 
 # Include header files
-include_directories(inc)
-include_directories(inc/Filetypes)
+include_directories("inc")
+include_directories("inc/Filetypes")
 
 # Create shared library
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
