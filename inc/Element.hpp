@@ -19,10 +19,10 @@ public:
 	//Element();
 	Element(Directory* parent, std::string name);
 	virtual ~Element();
-	std::string GetName();
+	std::string GetName() const;
 	void SetName(std::string new_name);
 	std::string GetPath(); //Total path.
-	Directory* GetParent();
+	Directory* GetParent() const;
 	void SetParent(Directory* new_parent); //Also removes from previous parent + adds to list of new parent. Safe, but shouldn't be ever called by the parent's functions.
 	
 	virtual bool IsDirectory() = 0;

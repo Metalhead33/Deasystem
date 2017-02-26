@@ -31,7 +31,7 @@ public:
 	Element* SeekElement(std::vector<std::string> path);
 	Element* SeekElement(std::string path);
 	Element* SeekElement(char* path);
-	Directory* GetRoot();
+	Directory* GetRoot() const;
 	Directory* Mkdir(std::vector<std::string> path);
 	Directory* Mkdir(std::string path);
 	Directory* Mkdir(char* path);

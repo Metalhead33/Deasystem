@@ -55,7 +55,7 @@ FsSystem::~FsSystem() {
 	delete ROOT;
 }
 
-Directory* FsSystem::GetRoot()
+Directory* FsSystem::GetRoot() const
 {
 	return ROOT;
 }

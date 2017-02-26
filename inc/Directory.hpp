@@ -39,6 +39,8 @@ public:
 	void AddElement(Element* elem); // Calls back in the given element
 	void RemoveElement(ElementIterator elem); // Calls back in the given element
 	void RemoveElement(Element* elem); // Calls back in the given element
+	
+	ElementContainer* GetContainer();
 private:
 	ElementContainer m_container;
 	bool root;

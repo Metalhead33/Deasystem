@@ -33,7 +33,7 @@ Element::~Element()
 	)
 }
 
-std::string Element::GetName()
+std::string Element::GetName() const
 {
 	return m_name;
 }
@@ -52,7 +52,7 @@ std::string Element::GetPath()
 	else return m_name;
 }
 
-Directory* Element::GetParent()
+Directory* Element::GetParent() const
 {
 	return m_parent;
 }

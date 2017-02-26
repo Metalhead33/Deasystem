@@ -181,4 +181,9 @@ std::string Directory::GetPath()
 	else return Element::GetPath();
 }
 
+ElementContainer* Directory::GetContainer()
+{
+	return &m_container;
+}
+
 }
