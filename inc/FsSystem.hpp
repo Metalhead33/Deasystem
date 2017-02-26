@@ -10,11 +10,11 @@
 #include "Directory.hpp"
 #include "AbstractFread.hpp"
 #include "Global.hpp"
-#include "RawFile.hpp"
-#include "CustomFile.hpp"
-#include "String8File.hpp"
-#include "String16File.hpp"
-#include "String32File.hpp"
+#include "Filetypes/RawFile.hpp"
+#include "Filetypes/CustomFile.hpp"
+#include "Filetypes/String8File.hpp"
+#include "Filetypes/String16File.hpp"
+#include "Filetypes/String32File.hpp"
 #include <vector>
 #include <string>
 #include <sstream>
