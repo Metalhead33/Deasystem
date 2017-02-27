@@ -151,26 +151,29 @@ bool FsSystem::Unserialize(AbstractFread* file_handle)
 		IF_DEBUG(
 		std::cout << "Creating the file \"" << std::string(buf) << "\".\n";
 		)
-		
-		temp_elem = SeekElement(buf); // Make sure the file doesn't exist already.
-		if(temp_elem)
-		{
-			delete temp_elem;
-			temp_elem = 0;
-		}
+
 		std::vector<std::string> path = StringSplit(buf,'/');
+        file_handle->read(&type,sizeof(int8_t));
 		
 		std::string elem_name = *(path.rbegin());
-		if(path.size() >= 2)
-		{
-			path.pop_back();
-			parent = Mkdir(path);
-		}
-		else parent = ROOT; // Determining the parent
-		// Read the filetype
-		file_handle->read(&type,sizeof(int8_t));
-		if(type < 0) temp_elem = new Directory(parent,elem_name);
-				else switch((Filetype)type)
+        // Determining the parent
+        // Read the filetype
+        if(type < 0) temp_elem = Mkdir(path);
+                else
+        {
+            temp_elem = SeekElement(buf); // Make sure the file doesn't exist already.
+            if(temp_elem)
+            {
+                delete temp_elem;
+                temp_elem = 0;
+            }
+            if(path.size() >= 2)
+            {
+                path.pop_back();
+                parent = Mkdir(path);
+            }
+            else parent = ROOT;
+            switch((Filetype)type)
 				{
 					case raw:
 					{
@@ -353,6 +356,7 @@ bool FsSystem::Unserialize(AbstractFread* file_handle)
 				eof_signal = false;
 			}
 	}
+    }
 	file_handle->seek(0);
 	IF_DEBUG(
 	std::cout << "DESERIALIZATION OVER.\n";
